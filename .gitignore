@@ -27,3 +27,7 @@ hs_err_pid*
 .classpath
 
 .project
+
+.checkstyle
+
+*.launch
