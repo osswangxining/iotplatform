@@ -10,7 +10,7 @@
     <artifactId>ruleengine-message</artifactId>
     <packaging>jar</packaging>
 
-    <name>Common Messages</name>
+    <name>Rule Engine Common Messages</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

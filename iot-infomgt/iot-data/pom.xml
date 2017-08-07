@@ -6,8 +6,7 @@
 	<artifactId>data</artifactId>
 	<packaging>jar</packaging>
 
-	<name>org.iotp.infomgt.data</name>
-	<url>http://maven.apache.org</url>
+	<name>IoT Information Management - Data</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

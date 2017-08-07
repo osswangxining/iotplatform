@@ -22,8 +22,7 @@
 	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>org.iotp.infomgt</name>
-	<url>http://maven.apache.org</url>
+	<name>IoT Information Management - DAO</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
