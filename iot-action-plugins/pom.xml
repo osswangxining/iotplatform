@@ -67,7 +67,6 @@
 	</modules>
 
 	<artifactId>plugins</artifactId>
-	<version>1.0.0</version>
 
 	<profiles>
 		<profile>
@@ -519,4 +518,9 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	<parent>
+		<groupId>org.iotp</groupId>
+		<artifactId>platform</artifactId>
+		<version>1.0.0</version>
+	</parent>
 </project>

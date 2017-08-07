@@ -3,11 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.iotp</groupId>
-	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
-	<name>org.iotp.iothub</name>
-	<url>http://maven.apache.org</url>
+	<name>IoT Hub</name>
 
 	<properties>
 		<pkg.name>iothub</pkg.name>
@@ -248,4 +246,9 @@
 		</plugins>
 	</build>
 	<artifactId>iothub</artifactId>
+	<parent>
+		<groupId>org.iotp</groupId>
+		<artifactId>platform</artifactId>
+		<version>1.0.0</version>
+	</parent>
 </project>
