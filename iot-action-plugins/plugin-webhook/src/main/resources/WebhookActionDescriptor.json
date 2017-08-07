@@ -1,0 +1,112 @@
+{
+  "schema": {
+    "title": "Webhook Action Configuration",
+    "type": "object",
+    "properties": {
+      "actionPath": {
+        "title": "Action Path",
+        "type": "string",
+        "default": ""
+      },
+      "requestMethod": {
+        "title": "Request method",
+        "type": "string"
+      },
+      "contentType": {
+        "title": "Content type",
+        "type": "string"
+      },
+      "template": {
+        "title": "Body Template",
+        "type": "string"
+      },
+      "sync": {
+        "title": "Requires delivery confirmation",
+        "type": "boolean"
+      },
+      "expectedResultCode": {
+        "title": "Expected Result Code",
+        "type": "integer"
+      }
+    },
+    "required": [
+      "sync",
+      "template",
+      "actionPath",
+      "expectedResultCode",
+      "requestMethod"
+    ]
+  },
+  "form": [
+    "sync",
+    {
+      "key": "template",
+      "type": "textarea",
+      "rows": 5
+    },
+    "actionPath",
+    {
+      "key": "requestMethod",
+      "type": "rc-select",
+      "multiple": false,
+      "items": [
+        {
+          "value": "GET",
+          "label": "GET"
+        },
+        {
+          "value": "POST",
+          "label": "POST"
+        },
+        {
+          "value": "PUT",
+          "label": "PUT"
+        },
+        {
+          "value": "DELETE",
+          "label": "DELETE"
+        },
+        {
+          "value": "HEAD",
+          "label": "HEAD"
+        },
+        {
+          "value": "PATCH",
+          "label": "PATCH"
+        }
+      ]
+    },
+    {
+      "key": "contentType",
+      "type": "rc-select",
+      "multiple": false,
+      "items": [
+        {
+          "value": "application/json",
+          "label": "application/json"
+        },
+        {
+          "value": "application/x-www-form-urlencoded",
+          "label": "application/x-www-form-urlencoded"
+        },
+        {
+          "value": "multipart/form-data",
+          "label": "multipart/form-data"
+        },
+        {
+          "value": "application/xml",
+          "label": "application/xml"
+        },
+        {
+          "value": "text/xml",
+          "label": "text/xml"
+        },
+        {
+          "value": "text/plain",
+          "label": "text/plain"
+        }
+      ]
+    },
+    "expectedResultCode"
+  ]
+}
