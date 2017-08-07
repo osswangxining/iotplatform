@@ -10,7 +10,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.dir>${basedir}/..</main.dir>
-        <pkg.name>org.iotp.application</pkg.name>
+        <pkg.name>org.iotp.server</pkg.name>
         <spring-boot.version>1.4.3.RELEASE</spring-boot.version>
         <spring.version>4.3.4.RELEASE</spring.version>
         <spring-security.version>4.2.0.RELEASE</spring-security.version>
