@@ -1,0 +1,197 @@
+application:
+  title: IoT Hub
+  formatted-version: 1.0.0
+server:
+  # Server bind address
+  address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
+  # Server bind port
+  port: "${HTTP_BIND_PORT:8081}"
+  # Server SSL configuration
+  ssl:
+    # Enable/disable SSL support
+    enabled: "${SSL_ENABLED:false}"
+    # Path to the key store that holds the SSL certificate
+    key-store: "${SSL_KEY_STORE:classpath:keystore/keystore.p12}"
+    # Password used to access the key store
+    key-store-password: "${SSL_KEY_STORE_PASSWORD:thingsboard}"
+    # Type of the key store
+    key-store-type: "${SSL_KEY_STORE_TYPE:PKCS12}"
+    # Alias that identifies the key in the key store
+    key-alias: "${SSL_KEY_ALIAS:tomcat}"
+
+# Zookeeper connection parameters. Used for service discovery.
+zk:
+  # Enable/disable zookeeper discovery service.
+  enabled: "${ZOOKEEPER_ENABLED:false}"
+  # Zookeeper connect string
+  url: "${ZOOKEEPER_URL:localhost:2181}"
+  # Zookeeper retry interval in milliseconds
+  retry_interval_ms: "${ZOOKEEPER_RETRY_INTERVAL_MS:3000}"
+  # Zookeeper connection timeout in milliseconds
+  connection_timeout_ms: "${ZOOKEEPER_CONNECTION_TIMEOUT_MS:3000}"
+  # Zookeeper session timeout in milliseconds
+  session_timeout_ms: "${ZOOKEEPER_SESSION_TIMEOUT_MS:3000}"
+  # Name of the directory in zookeeper 'filesystem'
+  zk_dir: "${ZOOKEEPER_NODES_DIR:/thingsboard}"
+
+
+# Clustering properties related to consistent-hashing. See architecture docs for more details.
+cluster:
+  # Name of hash function used for consistent hash ring.
+  hash_function_name: "${CLUSTER_HASH_FUNCTION_NAME:murmur3_128}"
+  # Amount of virtual nodes in consistent hash ring.
+  vitrual_nodes_size: "${CLUSTER_VIRTUAL_NODES_SIZE:16}"
+
+# Plugins configuration parameters
+plugins:
+  # Comma seperated package list used during classpath scanning for plugins
+  scan_packages: "${PLUGINS_SCAN_PACKAGES:org.thingsboard.server.extensions}"
+
+# JWT Token parameters
+security.jwt:
+  tokenExpirationTime: "${JWT_TOKEN_EXPIRATION_TIME:9000000}" # Number of seconds (15 mins)
+  refreshTokenExpTime: "${JWT_REFRESH_TOKEN_EXPIRATION_TIME:36000000}" # Seconds (1 hour)
+  tokenIssuer: "${JWT_TOKEN_ISSUER:thingsboard.io}"
+  tokenSigningKey: "${JWT_TOKEN_SIGNING_KEY:thingsboardDefaultSigningKey}"
+
+# Device communication protocol parameters
+http:
+  request_timeout: "${HTTP_REQUEST_TIMEOUT:60000}"
+
+# MQTT server parameters
+mqtt:
+  bind_address: "${MQTT_BIND_ADDRESS:0.0.0.0}"
+  bind_port: "${MQTT_BIND_PORT:1883}"
+  adaptor: "${MQTT_ADAPTOR_NAME:JsonMqttAdaptor}"
+  timeout: "${MQTT_TIMEOUT:10000}"
+  netty:
+    leak_detector_level: "${NETTY_LEASK_DETECTOR_LVL:DISABLED}"
+    boss_group_thread_count: "${NETTY_BOSS_GROUP_THREADS:1}"
+    worker_group_thread_count: "${NETTY_WORKER_GROUP_THREADS:12}"
+  # MQTT SSL configuration
+  ssl:
+    # Enable/disable SSL support
+    enabled: "${MQTT_SSL_ENABLED:false}"
+    # Path to the key store that holds the SSL certificate
+    key_store: "${MQTT_SSL_KEY_STORE:mqttserver.jks}"
+    # Password used to access the key store
+    key_store_password: "${MQTT_SSL_KEY_STORE_PASSWORD:server_ks_password}"
+    # Password used to access the key
+    key_password: "${MQTT_SSL_KEY_PASSWORD:server_key_password}"
+    # Type of the key store
+    key_store_type: "${MQTT_SSL_KEY_STORE_TYPE:JKS}"
+
+# CoAP server parameters
+coap:
+  bind_address: "${COAP_BIND_ADDRESS:0.0.0.0}"
+  bind_port: "${COAP_BIND_PORT:5683}"
+  adaptor:  "${COAP_ADAPTOR_NAME:JsonCoapAdaptor}"
+  timeout: "${COAP_TIMEOUT:10000}"
+
+database:
+  type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
+
+# Cassandra driver configuration parameters
+cassandra:
+  # Thingsboard cluster name
+  cluster_name: "${CASSANDRA_CLUSTER_NAME:Thingsboard Cluster}"
+  # Thingsboard keyspace name
+  keyspace_name: "${CASSANDRA_KEYSPACE_NAME:thingsboard}"
+  # Specify node list
+  url: "${CASSANDRA_URL:127.0.0.1:9042}"
+  # Enable/disable secure connection
+  ssl: "${CASSANDRA_USE_SSL:false}"
+  # Enable/disable JMX
+  jmx: "${CASSANDRA_USE_JMX:true}"
+  # Enable/disable metrics collection.
+  metrics: "${CASSANDRA_DISABLE_METRICS:true}"
+  # NONE SNAPPY LZ4
+  compression: "${CASSANDRA_COMPRESSION:none}"
+  # Specify cassandra claster initialization timeout (if no hosts available during startup)
+  init_timeout_ms: "${CASSANDRA_CLUSTER_INIT_TIMEOUT_MS:300000}"
+  # Specify cassandra claster initialization retry interval (if no hosts available during startup)
+  init_retry_interval_ms: "${CASSANDRA_CLUSTER_INIT_RETRY_INTERVAL_MS:3000}"
+
+  # Credential parameters #
+  credentials: "${CASSANDRA_USE_CREDENTIALS:false}"
+  # Specify your username
+  username: "${CASSANDRA_USERNAME:}"
+  # Specify your password
+  password: "${CASSANDRA_PASSWORD:}"
+
+  # Cassandra cluster connection socket parameters #
+  socket:
+    connect_timeout: "${CASSANDRA_SOCKET_TIMEOUT:5000}"
+    read_timeout: "${CASSANDRA_SOCKET_READ_TIMEOUT:20000}"
+    keep_alive: "${CASSANDRA_SOCKET_KEEP_ALIVE:true}"
+    reuse_address: "${CASSANDRA_SOCKET_REUSE_ADDRESS:true}"
+    so_linger: "${CASSANDRA_SOCKET_SO_LINGER:}"
+    tcp_no_delay: "${CASSANDRA_SOCKET_TCP_NO_DELAY:false}"
+    receive_buffer_size: "${CASSANDRA_SOCKET_RECEIVE_BUFFER_SIZE:}"
+    send_buffer_size: "${CASSANDRA_SOCKET_SEND_BUFFER_SIZE:}"
+
+  # Cassandra cluster connection query parameters  #
+  query:
+    read_consistency_level: "${CASSANDRA_READ_CONSISTENCY_LEVEL:ONE}"
+    write_consistency_level: "${CASSANDRA_WRITE_CONSISTENCY_LEVEL:ONE}"
+    default_fetch_size: "${CASSANDRA_DEFAULT_FETCH_SIZE:2000}"
+    # Specify partitioning size for timestamp key-value storage. Example MINUTES, HOURS, DAYS, MONTHS
+    ts_key_value_partitioning: "${TS_KV_PARTITIONING:MONTHS}"
+
+
+  
+# spring CORS configuration
+spring.mvc.cors:
+   mappings:
+     # Intercept path
+      "/api/auth/**":
+         #Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled.
+         allowed-origins: "*"
+         #Comma-separated list of methods to allow. '*' allows all methods.
+         allowed-methods: "POST,GET,OPTIONS"
+         #Comma-separated list of headers to allow in a request. '*' allows all headers.
+         allowed-headers: "*"
+         #How long, in seconds, the response from a pre-flight request can be cached by clients.
+         max-age: "1800"
+         #Set whether credentials are supported. When not set, credentials are not supported.
+         allow-credentials: "true"
+      "/api/v1/**":
+         allowed-origins: "*"
+         allowed-methods: "*"
+         allowed-headers: "*"
+         max-age: "1800"
+         allow-credentials: "true"
+
+# HSQLDB DAO Configuration
+spring:
+  data:
+    jpa:
+      repositories:
+        enabled: "true"
+  jpa:
+    hibernate:
+      ddl-auto: "validate"
+    database-platform: "org.hibernate.dialect.HSQLDialect"
+  datasource:
+    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.hsqldb.jdbc.JDBCDriver}"
+    url: "${SPRING_DATASOURCE_URL:jdbc:hsqldb:file:${SQL_DATA_FOLDER:/tmp}/thingsboardDb;sql.enforce_size=false}"
+    username: "${SPRING_DATASOURCE_USERNAME:sa}"
+    password: "${SPRING_DATASOURCE_PASSWORD:}"
+
+
+
+# PostgreSQL DAO Configuration
+#spring:
+#  data:
+#    jpa:
+#      repositories:
+#        enabled: "true"
+#  jpa:
+#    hibernate:
+#      ddl-auto: "validate"
+#    database-platform: "org.hibernate.dialect.PostgreSQLDialect"
+#  datasource:
+#    driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
+#    url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/thingsboard}"
+#    username: "${SPRING_DATASOURCE_USERNAME:postgres}"
+#    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
