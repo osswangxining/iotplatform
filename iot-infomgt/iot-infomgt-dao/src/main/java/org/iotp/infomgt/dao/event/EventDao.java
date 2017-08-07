@@ -1,0 +1,94 @@
+/*******************************************************************************
+ * Copyright 2017 osswangxining@163.com
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License.  You may obtain a copy
+ * of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ ******************************************************************************/
+/**
+ * Copyright © 2016-2017 The Thingsboard Authors
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package org.iotp.infomgt.dao.event;
+
+import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
+
+import org.iotp.infomgt.dao.Dao;
+import org.iotp.infomgt.data.Event;
+import org.iotp.infomgt.data.id.EntityId;
+import org.iotp.infomgt.data.page.TimePageLink;
+
+/**
+ * The Interface DeviceDao.
+ */
+public interface EventDao extends Dao<Event> {
+
+    /**
+     * Save or update event object
+     *
+     * @param event the event object
+     * @return saved event object
+     */
+    Event save(Event event);
+
+    /**
+     * Save event object if it is not yet saved
+     *
+     * @param event the event object
+     * @return saved event object
+     */
+    Optional<Event> saveIfNotExists(Event event);
+
+    /**
+     * Find event by tenantId, entityId and eventUid.
+     *
+     * @param tenantId the tenantId
+     * @param entityId the entityId
+     * @param eventType the eventType
+     * @param eventUid the eventUid
+     * @return the event
+     */
+    Event findEvent(UUID tenantId, EntityId entityId, String eventType, String eventUid);
+
+    /**
+     * Find events by tenantId, entityId and pageLink.
+     *
+     * @param tenantId the tenantId
+     * @param entityId the entityId
+     * @param pageLink the pageLink
+     * @return the event list
+     */
+    List<Event> findEvents(UUID tenantId, EntityId entityId, TimePageLink pageLink);
+
+    /**
+     * Find events by tenantId, entityId, eventType and pageLink.
+     *
+     * @param tenantId the tenantId
+     * @param entityId the entityId
+     * @param eventType the eventType
+     * @param pageLink the pageLink
+     * @return the event list
+     */
+    List<Event> findEvents(UUID tenantId, EntityId entityId, String eventType, TimePageLink pageLink);
+}
