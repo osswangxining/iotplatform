@@ -35,6 +35,9 @@ The Rules Engine can also route messages to external 3rd party cloud services, s
 
 Besides these rule based analytics, this IoT Platform also provides the Advanced Analytics including complex and compound computation, Spark streaming based timewindow rules, Spark Machine Learning enabled analytics, etc.
 
+- Frequency
+Oftentimes, an application wants to control the frequency that continuously generated analytic results are made available to other parts of the application or published to other applications or an event hub.
+
 ## High Performance
 Actor model enables high performant concurrent processing of messages from devices as long as server-side API calls. Akka is used as an actor system implementation with following actor hierarchies.
 
