@@ -7,6 +7,8 @@ With this IoT platform, you are able to:
 - 4) Deliver device data to other systems, 
 - 5) Enable use-case specific features using customizable rules and plugins.
 
+![Archicteture](https://osswangxining.github.io/images/NewIoTPDocs/architecture.png)
+
 ## IoT Device SDK
 This IoT Platform provides an SDK to help you easily and quickly connect your hardware device or your mobile application. This IoT Device SDK enables your devices to connect, authenticate, and exchange messages with this IoT Platform using the MQTT, HTTP, or WebSockets protocols. The Device SDK supports Java/JavaScript, and includes the client libraries, the developer guide, and the porting guide for manufacturers. You can also use an open source alternative or write your own SDK.
 
