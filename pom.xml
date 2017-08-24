@@ -331,5 +331,6 @@
     	<module>iot-action-plugins</module>
     	<module>iothub</module>
     	<module>iotplatform</module>
+    	<module>iotplatform-ui</module>
     </modules>
 </project>
