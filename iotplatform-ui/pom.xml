@@ -15,6 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <main.dir>${basedir}/..</main.dir>
+        <pkg.name>org.iotp.ui</pkg.name>
     </properties>
 
     <build>

@@ -135,9 +135,9 @@
             <version>${cassandra-unit.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.thingsboard</groupId>
+            <groupId>org.iotp</groupId>
             <artifactId>ui</artifactId>
-            <version>1.3.0-SNAPSHOT</version>
+            <version>1.0.0</version>
             <scope>runtime</scope>
         </dependency>
         <dependency>
