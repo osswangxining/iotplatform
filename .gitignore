@@ -32,3 +32,5 @@ hs_err_pid*
 
 *.launch
 /.DS_Store
+
+iot-infomgt/iot-infomgt-dao/.settings/org.eclipse.wst.common.project.facet.core.xml

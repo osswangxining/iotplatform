@@ -19,7 +19,6 @@
 
 	<groupId>org.iotp.infomgt</groupId>
 	<artifactId>dao</artifactId>
-	<version>1.0.0</version>
 	<packaging>jar</packaging>
 
 	<name>IoT Information Management - DAO</name>
@@ -46,7 +45,6 @@
         <commons-validator.version>1.5.0</commons-validator.version>
         <commons-io.version>2.5</commons-io.version>
         <commons-csv.version>1.4</commons-csv.version>
-        <jackson.version>2.8.8.1</jackson.version>
         <json-schema-validator.version>2.2.6</json-schema-validator.version>
         <scala.version>2.11</scala.version>
         <akka.version>2.4.2</akka.version>
@@ -75,6 +73,7 @@
         <dbunit.version>2.5.3</dbunit.version>
         <spring-test-dbunit.version>1.2.1</spring-test-dbunit.version>
         <postgresql.driver.version>9.4.1211</postgresql.driver.version>
+        <pkg.name>org.iotp.infomgt.dao</pkg.name>
 	</properties>
 
 	
@@ -153,7 +152,7 @@
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
-			<version>2.8.8.1</version>
+			<version>${jackson.version}</version>
 		</dependency>
         <dependency>
             <groupId>com.github.fge</groupId>
@@ -278,4 +277,9 @@
 			
 		</plugins>
 	</build>
+	<parent>
+		<groupId>org.iotp.infomgt</groupId>
+		<artifactId>core</artifactId>
+		<version>1.0.0</version>
+	</parent>
 </project>
