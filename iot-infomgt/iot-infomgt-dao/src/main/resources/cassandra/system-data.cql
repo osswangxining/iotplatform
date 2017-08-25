@@ -1,19 +1,3 @@
---
--- Copyright © 2016-2017 The Thingsboard Authors
---
--- Licensed under the Apache License, Version 2.0 (the "License");
--- you may not use this file except in compliance with the License.
--- You may obtain a copy of the License at
---
---     http://www.apache.org/licenses/LICENSE-2.0
---
--- Unless required by applicable law or agreed to in writing, software
--- distributed under the License is distributed on an "AS IS" BASIS,
--- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
--- See the License for the specific language governing permissions and
--- limitations under the License.
---
-
 /** SYSTEM **/
 
 /** System admin **/
@@ -28,7 +12,7 @@ VALUES ( now ( ), minTimeuuid ( '2016-11-01 01:01:01+0000' ), true,
 /** System settings **/
 INSERT INTO thingsboard.admin_settings ( id, key, json_value )
 VALUES ( now ( ), 'general', '{
-	"baseUrl": "http://localhost:8080"
+	"baseUrl": "http://localhost:18080"
 }' );
 
 INSERT INTO thingsboard.admin_settings ( id, key, json_value )
@@ -285,21 +269,21 @@ INSERT INTO thingsboard.plugin ( id, tenant_id, name, state, search_text, api_to
 configuration )
 VALUES ( minTimeuuid ( '2016-11-01 01:01:01+0000' ), minTimeuuid ( 0 ), 'System Telemetry Plugin', 'ACTIVE',
 'system telemetry plugin', 'telemetry',
-'org.thingsboard.server.extensions.core.plugin.telemetry.TelemetryStoragePlugin', true, '{}' );
+'org.iotp.analytics.ruleengine.core.plugin.telemetry.TelemetryStoragePlugin', true, '{}' );
 
 INSERT INTO thingsboard.rule ( id, tenant_id, name, plugin_token, state, search_text, weight, filters, processor,
 action )
 VALUES ( minTimeuuid ( '2016-11-01 01:01:02+0000' ), minTimeuuid ( 0 ), 'System Telemetry Rule', 'telemetry', 'ACTIVE',
 'system telemetry rule', 0,
-'[{"clazz":"org.thingsboard.server.extensions.core.filter.MsgTypeFilter", "name":"TelemetryFilter", "configuration": {"messageTypes":["POST_TELEMETRY","POST_ATTRIBUTES","GET_ATTRIBUTES"]}}]',
+'[{"clazz":"org.iotp.analytics.ruleengine.core.filter.MsgTypeFilter", "name":"TelemetryFilter", "configuration": {"messageTypes":["POST_TELEMETRY","POST_ATTRIBUTES","GET_ATTRIBUTES"]}}]',
 null,
-'{"clazz":"org.thingsboard.server.extensions.core.action.telemetry.TelemetryPluginAction", "name":"TelemetryMsgConverterAction", "configuration":{}}'
+'{"clazz":"org.iotp.analytics.ruleengine.core.action.telemetry.TelemetryPluginAction", "name":"TelemetryMsgConverterAction", "configuration":{}}'
 );
 
 INSERT INTO thingsboard.plugin ( id, tenant_id, name, state, search_text, api_token, plugin_class, public_access,
 configuration )
 VALUES ( minTimeuuid ( '2016-11-01 01:01:03+0000' ), minTimeuuid ( 0 ), 'System RPC Plugin', 'ACTIVE',
-'system rpc plugin', 'rpc', 'org.thingsboard.server.extensions.core.plugin.rpc.RpcPlugin', true, '{
+'system rpc plugin', 'rpc', 'org.iotp.analytics.ruleengine.core.plugin.rpc.RpcPlugin', true, '{
        "defaultTimeout": 20000
      }' );
 
