@@ -6,7 +6,7 @@ server:
   # Server bind address
   address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
   # Server bind port
-  port: "${HTTP_BIND_PORT:8080}"
+  port: "${HTTP_BIND_PORT:18080}"
   # Server SSL configuration
   ssl:
     # Enable/disable SSL support
