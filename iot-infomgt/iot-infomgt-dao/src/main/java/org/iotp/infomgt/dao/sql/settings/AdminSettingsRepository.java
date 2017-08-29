@@ -34,7 +34,6 @@ import org.iotp.infomgt.dao.model.sql.AdminSettingsEntity;
 import org.springframework.data.repository.CrudRepository;
 
 /**
- * Created by Valerii Sosliuk on 5/6/2017.
  */
 public interface AdminSettingsRepository extends CrudRepository<AdminSettingsEntity, String> {
 
