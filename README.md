@@ -62,3 +62,10 @@ This IoT Platform adopts consistent hashing to ensure scalability and availabili
 - avoid race conditions. All messages for particular device are processed on a determined server.
 - allows to target server-side api calls based on device id.
  
+
+
+## Setup
+### maven clean
+### maven install
+
+
