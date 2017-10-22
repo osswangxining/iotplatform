@@ -33,6 +33,10 @@ hs_err_pid*
 *.launch
 /.DS_Store
 
-iot-infomgt/iot-infomgt-dao/.settings/org.eclipse.wst.common.project.facet.core.xml
+iot-infomgt/iot-infomgt-dao/.settings/
 
-iothub/.settings/org.eclipse.wst.common.project.facet.core.xml
+iothub/.settings/
+
+iot-ruleengine/ruleengine-api/.settings/
+
+iot-ruleengine/ruleengine-core/.settings/
