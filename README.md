@@ -67,6 +67,32 @@ This IoT Platform adopts consistent hashing to ensure scalability and availabili
 ## Setup
 ### maven clean
 ### maven install
+```
+INFO] Reactor Summary:
+[INFO] 
+[INFO] Whole IoT Platform ................................. SUCCESS [  0.650 s]
+[INFO] IoT Information Management ......................... SUCCESS [  0.203 s]
+[INFO] IoT Information Management - Data .................. SUCCESS [  0.730 s]
+[INFO] IoT Information Management - DAO ................... SUCCESS [  0.734 s]
+[INFO] Rule based IoT Analytics ........................... SUCCESS [  0.006 s]
+[INFO] Rule Engine Common Messages ........................ SUCCESS [  0.125 s]
+[INFO] Rule Engine API .................................... SUCCESS [  0.272 s]
+[INFO] Rule Engine Core Extensions ........................ SUCCESS [  0.342 s]
+[INFO] Action Plugins ..................................... SUCCESS [  0.006 s]
+[INFO] Kafka Plugin ....................................... SUCCESS [  2.126 s]
+[INFO] MQTT Plugin ........................................ SUCCESS [  0.132 s]
+[INFO] Webhook Plugin ..................................... SUCCESS [  0.476 s]
+[INFO] IoT Hub ............................................ SUCCESS [  0.553 s]
+[INFO] IoT Platform UI .................................... SUCCESS [02:14 min]
+[INFO] IoT Platform Server ................................ SUCCESS [  0.730 s]
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 02:22 min
+[INFO] Finished at: 2017-10-22T21:16:41+08:00
+[INFO] Final Memory: 42M/625M
+[INFO] -----------------------------------------------------------
+```
 
 ### Keep Kafka and Cassandra running
 ```
