@@ -1,3 +1,5 @@
+
+
 # IoT Platform
 An open-source IoT platform that enables rapid development, management and scaling of IoT projects. 
 With this IoT platform, you are able to: 
@@ -101,3 +103,8 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 8b0def0e1594        cassandra           "/docker-entrypoin..."   3 months ago        Up 7 seconds        0.0.0.0:7000-7001->7000-7001/tcp, 0.0.0.0:7199->7199/tcp, 0.0.0.0:9042->9042/tcp, 0.0.0.0:9160->9160/tcp   mycassandra
 a6975c6bf0c2        spotify/kafka       "supervisord -n"         3 months ago        Up 14 seconds       0.0.0.0:2181->2181/tcp, 0.0.0.0:9092->9092/tcp
 ```
+
+# Licenses
+This project is released under Apache 2.0 License.
+This open source project is based on several other open source projects or libraries, and free for experiments (no any commercial support) with Apache License, Version 2.0. 
+Notice: ThingsBoard project (https://github.com/thingsboard/thingsboard) is the original idea for this project.
