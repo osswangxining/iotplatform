@@ -9,7 +9,7 @@
 	<properties>
 		<main.dir>${basedir}/..</main.dir>
 		<spring-boot.version>1.4.3.RELEASE</spring-boot.version>
-		<spring.version>4.3.4.RELEASE</spring.version>
+		<spring.version>6.0.0</spring.version>
 		<spring-security.version>4.2.0.RELEASE</spring-security.version>
 		<jjwt.version>0.7.0</jjwt.version>
 		<joda-time.version>2.4</joda-time.version>
