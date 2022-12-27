@@ -62,7 +62,7 @@
         <os-maven-plugin.version>1.5.0</os-maven-plugin.version>
         <rabbitmq.version>3.6.5</rabbitmq.version>
         <kafka.version>0.9.0.0</kafka.version>
-        <hazelcast.version>3.6.6</hazelcast.version>
+        <hazelcast.version>3.12.13</hazelcast.version>
         <hazelcast-zookeeper.version>3.6.1</hazelcast-zookeeper.version>
         <surfire.version>2.19.1</surfire.version>
         <jar-plugin.version>3.0.2</jar-plugin.version>
